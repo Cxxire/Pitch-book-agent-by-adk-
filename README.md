@@ -1,84 +1,129 @@
 <div align="center">
 
-# 🤖 PitchCraft AI 📈
+# 🌸 PitchCraft AI 📈
 
-**Automated Pitch Book & Investment Report Generator**
+**A charming multi-agent studio for instant pitch books & investment reports**
 
 </div>
 
 <p align="center">
-  <a href="#-about-the-project">About</a> •
-  <a href="#-how-it-works">Workflow</a> •
-  <a href="#-example-output">Live Demo</a> •
-  <a href="#-the-agent-team">The Agents</a> •
-  <a href="#-getting-started">Getting Started</a>
+  <a href="#-project-sparkle">About</a> •
+  <a href="#-workflow">Workflow</a> •
+  <a href="#-agent-lineup">Agents</a> •
+  <a href="#-getting-started">Getting Started</a> •
+  <a href="#-example-output">Sample Report</a>
 </p>
 
 <p align="center">
-    <img src="https://img.shields.io/badge/status-in%20development-orange" alt="Status">
-    <img src="https://img.shields.io/badge/version-1.0.0-blue" alt="Version">
-    <img src="https://img.shields.io/badge/license-MIT-brightgreen" alt="License">
+  <img src="https://img.shields.io/badge/status-lab%20magic%20✨-ff69b4" alt="Status">
+  <img src="https://img.shields.io/badge/version-1.0.0-7d3cff" alt="Version">
+  <img src="https://img.shields.io/badge/license-MIT-00c49a" alt="License">
 </p>
 
 ---
 
-## 🎯 About The Project
+## 🎯 Project Sparkle
+**PitchCraft AI** is a delightful yet professional multi-agent pipeline that turns a company name into a fully formatted pitch book. The root agent quietly coordinates a squad of specialists—market scouts, data quants, storytellers, and layout artists—so the user only sees the polished final report.
 
-> PitchCraft AI is a sophisticated multi-agent system designed to fully automate the creation of comprehensive pitch books and investment reports. It orchestrates a team of specialized AI agents, transforming raw financial data and user requests into a polished, professional, and data-driven document with zero manual intervention.
-
-### ✨ Key Features:
-
--   **Fully Automated**: From initial request to final report delivery, the process is hands-off.
--   **Modular by Design**: Each agent has a single, well-defined responsibility, making the system robust and easy to extend.
--   **Data-Driven**: Integrates with live financial data sources to provide up-to-date analysis.
--   **Consistent & Professional**: Ensures all reports are generated in a standardized, high-quality format.
+### ✨ Why you'll love it
+- **End-to-end automation** – ask once, receive the finished document.
+- **Modular architecture** – swap or extend agents without touching the orchestration logic.
+- **Consistent format** – every report ships with the same high-quality template.
+- **Cloud native** – powered by Google’s Agent Developer Kit and Gemini models.
 
 ---
 
-## ⚙️ How It Works
-
-The system is managed by a root **`Pitch_book_agent`** which acts as a project manager. It directs a sequence of specialized sub-agents to gather data, perform analysis, and assemble the final report.
+## 🧠 Workflow
+The `Pitch_book_agent` orchestrates the whole show in five silent steps: extract the ticker → gather data → analyze → format → reveal the final PDF/text.
 
 ```mermaid
 graph TD
-    style User fill:#5DADE2,stroke:#333,stroke-width:2px,color:#fff
-    style Manager fill:#8E44AD,stroke:#333,stroke-width:2px,color:#fff
-    style Data fill:#1ABC9C,stroke:#333,stroke-width:2px,color:#fff
-    style Analysis fill:#F39C12,stroke:#333,stroke-width:2px,color:#fff
-    style Assembly fill:#E74C3C,stroke:#333,stroke-width:2px,color:#fff
-    style Report fill:#2ECC71,stroke:#333,stroke-width:2px,color:#fff
+    style User fill:#F8BBD0,stroke:#333,color:#111
+    style Manager fill:#C39BD3,stroke:#333,color:#111
+    style Data fill:#A2D9CE,stroke:#333,color:#111
+    style Analysis fill:#FAD7A0,stroke:#333,color:#111
+    style Assembly fill:#F5B7B1,stroke:#333,color:#111
+    style Report fill:#ABEBC6,stroke:#333,color:#111
 
-    User(👤 User Request) --> Manager(🤖 Pitch_book_agent);
+    User(👤 User prompt) --> Manager(🎩 Pitch_book_agent)
 
-    subgraph "Phase 1: Data Gathering"
-        Manager --> Data1(📡 DMIS_Agent);
-        Manager --> Data2(📊 FMPS_Agent);
+    subgraph "Phase 1 · Data Gathering"
+        Manager --> Data1(📡 DMIS_Agent)
+        Manager --> Data2(📊 FMPS_Agent)
     end
 
-    subgraph "Phase 2: Analysis & Narrative"
-        Data1 -- News & Market Data --> Analysis(✍️ CGNS_Agent);
-        Data2 -- Quantitative Data --> Analysis;
-    end
-    
-    subgraph "Phase 3: Final Assembly"
-        Analysis -- Investment Summary --> Assembly(📑 DVS_Agent);
-        Data1 -- Raw Data --> Assembly;
-        Data2 -- Raw Data --> Assembly;
+    subgraph "Phase 2 · Narrative Crafting"
+        Data1 -- news & pulse --> Analysis(✍️ CGNS_Agent)
+        Data2 -- financials --> Analysis
     end
 
-    Assembly --> Report(✅ Final Report.pdf);
+    subgraph "Phase 3 · Dress Rehearsal"
+        Analysis -- storyline --> Assembly(📑 DVS_Agent)
+        Data1 -- raw data --> Assembly
+        Data2 -- raw data --> Assembly
+    end
 
-    classDef default font-family: 'Helvetica', sans-serif;
+    Assembly --> Report(✅ Final report)
 ```
 
+---
 
+## 🤖 Agent Lineup
 
-📄 Example Output
-<a name="-example-output"></a>
+| Agent | Personality | Superpower |
+| --- | --- | --- |
+| 🟣 **Pitch_book_agent** | The conductor | Extracts the target company, strictly enforces the call order, and stays silent until the grand reveal. |
+| 📡 **DMIS_Agent** | News scout | Fetches market data + headlines, packages them into tidy JSON. |
+| 📊 **FMPS_Agent** | The quant | Supplies historical fundamentals, valuation ratios, consensus targets, and technical indicators. |
+| ✍️ **CGNS_Agent** | Story crafter | Builds investment rationale & risk narratives from the structured data. |
+| 📑 **DVS_Agent** | Layout artist | Weaves narrative + metrics into the final pitch deck section. |
 
-Here is a sample report generated by the agent system for the prompt apple company NASDAQ.
+---
 
-<details> <summary><strong>🚀 Click to see the full generated report for Apple Inc. (AAPL)</strong></summary>
+## 🚀 Getting Started
+
+### 1. Clone & peek inside
+```bash
+git clone <your-fork-url>
+cd Pitch-book-agent-by-adk-
+```
+
+### 2. Create a comfy Python space
+```bash
+python -m venv .venv
+source .venv/bin/activate   # Windows: .venv\Scripts\activate
+pip install -r requirements.txt  # or install google-adk + deps manually
+```
+
+### 3. Add your secrets to `.env`
+Create a `.env` file (or edit with `vim .env`) containing the credentials/keys needed by the ADK + Gemini stack, for example:
+```
+GOOGLE_APPLICATION_CREDENTIALS=/path/to/service-account.json
+PROJECT_ID=your-project
+LOCATION=global
+```
+Load it before running:
+```bash
+source .env
+```
+
+### 4. Run the maestro
+```bash
+python -m Pitch_book_agent.agent "Apple Inc., NASDAQ"
+```
+The orchestrator will remain silent until every sub-agent finishes, then print the full report.
+
+> 💡 Tip: Need retries for busy APIs? Call `run_with_retry(root_agent, "AAPL, NASDAQ")` and let the helper handle quota hiccups.
+
+---
+
+## 📄 Example Output
+The snippet below comes from a live run for **Apple Inc. (AAPL)**. The report includes disclosures, investment rationale vs. risks, business snapshot, technical stats, valuation metrics, and analyst consensus in a crisp sell-side style.
+
+<details>
+<summary><strong>✨ View sample output</strong></summary>
+
+```
 [user]: apple company NASDAQ
 [Pitch_book_agent]: AAPL:US
 17-Jul-25
@@ -89,95 +134,19 @@ Disclosures and Disclaimer
 · XXXXXX
 
 Investment Rationale and Risks
-Investment Rationale:
-· Apple benefits from a deeply integrated ecosystem of hardware, software, and services, fostering strong brand loyalty and high customer retention that supports consistent revenue generation.
-· The company continues to innovate with a planned significant new product lineup for the first half of 2026, including new iPhone, iPad, and Mac models, providing a clear future growth pipeline.
-· Strategic investments, such as the $500 million deal with MP Materials for U.S.-made recycled rare earth magnets, enhance supply chain resilience and reduce geopolitical dependence.
-· Despite market fluctuations, Apple demonstrates robust financial health with high profitability and consistent shareholder returns through dividends and share buybacks.
-
-Investment Risks:
-· Apple faces significant competitive pressure and challenges in its Artificial Intelligence strategy, with recent departures of key AI talent highlighting potential gaps in its competitive positioning and execution.
-· A looming management overhaul, including the chief operating officer transition and several senior executives nearing retirement, introduces uncertainty regarding long-term strategic direction and leadership stability.
-· Market saturation in its core product categories and increasing competition from other tech giants could lead to slower growth rates if new revenue streams or product categories do not materialize as expected.
-· The company is exposed to increased regulatory scrutiny across various jurisdictions, particularly concerning app store policies and market dominance, which could impact business models and profitability.
-
-Investment Theme/ Business Description
-Theme: Consumer Electronics/Software/Services/Artificial Intelligence/Supply Chain
-
-Business description: Apple Inc. designs, manufactures, and markets smartphones, personal computers, tablets, wearables, and accessories worldwide. The company also sells a range of related services, creating an integrated ecosystem for its customers.
-Company Facts ²⁾
-Bloomberg Ticker: AAPL:US
-Currency: USD
-Bloomberg Country of Risk: United States
-ISIN: US0378331005
-Sector (GICS): Information Technology
-Industry (GICS): Consumer Electronics
-Market Capitalization (USDm): 3,120,000
-Expected Next Earnings Report Date: 31-Jul-25
-
-Historical Share Price Data/ Technical Indicators ²⁾
-Last Price: 209.11
-52 Week High / Low: 260.1 / 169.21
-Percentage Price Change - 1 Year (%): +-4.39
-Moving Average 20 Day: 205.42
-Moving Average 50 Day: 203.78
-Moving Average 200 Day: 222.63
-Bollinger Bands - Upper/Lower: 224.64 / 195.54
-Relative Strength Index (RSI) 14 Day: 55.85
-
-Financial Matrix ²⁾
-PE - Current Year / Next Fiscal Year: 32.56 / 28.83
-Estimated PE Growth Rate (x): 1.95
-Price/Book ratio (x): 46.77
-Dividend Yield % - Indicated / Nxt Yr Est.: 0.48 / 0.5
-3 Year Dividend Growth (%): 5.13
-Free Cash Flow Yield (%) - Trailing/Forward: 3.14 / N/A
-Shareholder Yield (Returned Capital/Market Cap)%: 4.1
-Enterprise Value/ This Year Estimated EBITDA: 22.35
-Return on Common Equity (%): 138.0
-Net Debt/ Equity (%): 147.0
-Equity Beta (x): 1.12
-
-Bloomberg Consensus ²⁾
-No of Buys / Holds / Sells: 21 / 11 / 2
-Consensus 12m Target Price: 235.27
-Return Potential (%): +12.51%
-
-Note:XXX
-XXX
-XXX
-
+...
+```
 
 </details>
-🤝 The Agent Team
-Our system is composed of a powerful team of agents, each an expert in its domain.
 
-🟣 Pitch_book_agent (The Conductor)
-Role: Root Agent / Project Manager
+---
 
-Function: This agent acts as a silent project manager, strictly orchestrating the sequence of sub-agents. It handles the initial user request and delivers only the final, completed document without any intermediate conversation.
+## 🛠 Roadmap
+1. Export ready-made PowerPoint/Keynote slides.
+2. Add multilingual templates.
+3. Stream intermediate progress via secure channels (still keeping user interface serene).
 
-✍️ CGNS_Agent (The Analyst)
-Role: Sub Agent / Equity Research Analyst
+---
 
-Function: This agent analyzes pre-fed financial data and news to generate a structured investment summary. It is responsible for creating the core narrative, including the investment rationale and key risks, in a strict format for the next step.
-
-📡 DMIS_Agent (The News Scout)
-Role: Sub Agent / Data Retrieval Specialist
-
-Function: This agent gathers the latest market data and recent news about a company from trusted financial sources. Its sole output is to structure this raw, unbiased information into a strict JSON format for other agents to analyze.
-
-📊 FMPS_Agent (The Quant)
-Role: Sub Agent / Financial Data Fetcher
-
-Function: This agent collects a comprehensive set of quantitative financial data, from technical indicators to analyst ratings. Its only function is to structure this raw information into a strict JSON object for use by other agents, without performing any analysis.
-
-📑 DVS_Agent (The Assembler)
-Role: Sub Agent / Document Finalizer
-
-Function: This is the final agent in the chain. It meticulously combines the pre-written narrative from the Analyst and the raw data from the Scouts into a single, strictly formatted report. It performs no analysis, simply populating a pre-defined template to create the final document.
-
-
-
-Get start: rmb to set up your environment by .env file for [vim .env] in your terminal!!
-
+## 💌 Need a hand?
+Open an issue or drop a note—PitchCraft loves feedback and new ideas. Happy pitching! 🎀
